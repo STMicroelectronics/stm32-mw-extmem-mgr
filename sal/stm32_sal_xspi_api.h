@@ -207,6 +207,14 @@ HAL_StatusTypeDef SAL_XSPI_DisableMapMode(SAL_XSPI_ObjectTypeDef *SalXspi);
 HAL_StatusTypeDef SAL_XSPI_UpdateMemoryType(SAL_XSPI_ObjectTypeDef *SalXspi, SAL_XSPI_DataOrderTypeDef DataOrder);
 
 /**
+  * @brief this is called to abort transaction
+  *
+  * @param SalXspi handle on the XSPI IP
+  * @return @ref HAL_StatusTypeDef
+  */
+HAL_StatusTypeDef SAL_XSPI_Abort(SAL_XSPI_ObjectTypeDef *SalXspi);
+
+/**
   * @}
   */
 

@@ -65,24 +65,14 @@ Page</a>: Getting started with External memory Manager</li>
 <section id="update-history" class="col-sm-12 col-lg-8">
 <h1>Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section2" checked aria-hidden="true">
-<label for="collapse-section2" aria-hidden="true"><strong>V1.1.0 /
-29-May-2024</strong></label>
+<input type="checkbox" id="collapse-section3" checked aria-hidden="true">
+<label for="collapse-section3" aria-hidden="true"><strong>V1.2.0 /
+09-October-2024</strong></label>
 <div>
 <h2 id="release-update">Release update</h2>
 <ul>
-<li>NOR_SFDP :
-<ul>
-<li>update for memory presenting only short basic JEDEC table</li>
-<li>update to add frequency upgrade when JEDEC doesn’t provide frequency
-information</li>
-<li>fix issue detected during octal activation requiring adding WIP
-operations</li>
-</ul></li>
-<li>SAL_XSPI :
-<ul>
-<li>update to support DMA transfer</li>
-</ul></li>
+<li>fix : jump issue without compiler optim</li>
+<li>fix : performance issue detected in security context</li>
 </ul>
 <h2 id="known-limitations">Known limitations</h2>
 <ul>
@@ -116,17 +106,38 @@ operations</li>
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section1" aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true"><strong>V1.0.0 /
-28-February-2024</strong></label>
+<input type="checkbox" id="collapse-section2" aria-hidden="true">
+<label for="collapse-section2" aria-hidden="true"><strong>V1.1.0 /
+29-May-2024</strong></label>
 <div>
-<h2 id="first-release">First release</h2>
-<p>First official release of STM32_ExtMem_Manager</p>
+<h2 id="release-update-1">Release update</h2>
+<ul>
+<li>NOR_SFDP :
+<ul>
+<li>update for memory presenting only short basic JEDEC table</li>
+<li>update to add frequency upgrade when JEDEC doesn’t provide frequency
+information</li>
+<li>fix issue detected during octal activation requiring adding WIP
+operations</li>
+</ul></li>
+<li>SAL_XSPI :
+<ul>
+<li>update to support DMA transfer</li>
+</ul></li>
+</ul>
 <h2 id="known-limitations-1">Known limitations</h2>
+<ul>
+<li>See supported memories</li>
+</ul>
+<h2 id="supported-memories-1">Supported memories</h2>
 <ul>
 <li>List of the tested memories
 <ul>
-<li>NOR_SFDP : MACRONIX MX66UW1G45G, MX25UW25645G</li>
+<li>NOR_SFDP :
+<ul>
+<li>MACRONIX MX66UW1G45G, MX25UW25645G, MX25LM51245G</li>
+<li>WINBOND W25Q64JV</li>
+</ul></li>
 <li>PSRAM: APMEMORY APS256XXN</li>
 <li>SDCARD: micro SD kingstone 1GB</li>
 </ul></li>
@@ -141,6 +152,37 @@ boards</h2>
 <li>Not applicable</li>
 </ul>
 <h2 id="dependencies-1">Dependencies</h2>
+<ul>
+<li>Not applicable</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1" aria-hidden="true">
+<label for="collapse-section1" aria-hidden="true"><strong>V1.0.0 /
+28-February-2024</strong></label>
+<div>
+<h2 id="first-release">First release</h2>
+<p>First official release of STM32_ExtMem_Manager</p>
+<h2 id="known-limitations-2">Known limitations</h2>
+<ul>
+<li>List of the tested memories
+<ul>
+<li>NOR_SFDP : MACRONIX MX66UW1G45G, MX25UW25645G</li>
+<li>PSRAM: APMEMORY APS256XXN</li>
+<li>SDCARD: micro SD kingstone 1GB</li>
+</ul></li>
+</ul>
+<h2 id="supported-devices-and-boards-2">Supported Devices and
+boards</h2>
+<ul>
+<li>Not applicable</li>
+</ul>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<ul>
+<li>Not applicable</li>
+</ul>
+<h2 id="dependencies-2">Dependencies</h2>
 <ul>
 <li>Not applicable</li>
 </ul>
