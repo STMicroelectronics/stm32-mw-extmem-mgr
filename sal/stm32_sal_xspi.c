@@ -242,12 +242,12 @@ HAL_StatusTypeDef SAL_XSPI_Init(SAL_XSPI_ObjectTypeDef *SalXspi, void *HALHandle
   return HAL_OK;
 }
 
-HAL_StatusTypeDef SAL_XSPI_MemoryConfig(SAL_XSPI_ObjectTypeDef *SalXspi, SAL_XSPI_MemParamTypeTypeDef ParmetersType, void *ParamVal)
+HAL_StatusTypeDef SAL_XSPI_MemoryConfig(SAL_XSPI_ObjectTypeDef *SalXspi, SAL_XSPI_MemParamTypeTypeDef ParametersType, void *ParamVal)
 {
   HAL_StatusTypeDef retr = HAL_OK;
   XSPI_RegularCmdTypeDef s_commandbase = SalXspi->Commandbase;
 
-  switch (ParmetersType) {
+  switch (ParametersType) {
   case PARAM_PHY_LINK:{
     SalXspi->PhyLink = *((SAL_XSPI_PhysicalLinkTypeDef *)ParamVal);
     DEBUG_PARAM_BEGIN(); DEBUG_PARAM_DATA("::PARAM_PHY_LINK::");DEBUG_PARAM_DATA(STR_PHY_LINK(SalXspi->PhyLink));
@@ -874,7 +874,7 @@ HAL_StatusTypeDef SAL_XSPI_Abort(SAL_XSPI_ObjectTypeDef *SalXspi)
   * @{
   */
 /**
-  * @brief this function return a formatted command
+  * @brief This function return a formatted command
   *
   * @param CommandExtension type of the command extension 0: the complement  1 : the same
   * @param InstructionWidth instruction width
@@ -908,7 +908,7 @@ uint16_t XSPI_FormatCommand(uint8_t CommandExtension, uint32_t InstructionWidth,
 }
 
 /**
-  * @brief this function trasnmits the data
+  * @brief This function trasnmits the data
   *
   * @param SalXspi handle on the XSPI IP
   * @param Data data pointer
