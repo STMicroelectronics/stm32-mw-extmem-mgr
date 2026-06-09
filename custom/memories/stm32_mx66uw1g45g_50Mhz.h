@@ -1,9 +1,12 @@
 /**
   ******************************************************************************
-  * @file    stm32_mx66uw1g45g.h
+  * @file    stm32_mx66uw1g45g_50Mhz.h
   * @author  MCD Application Team
   * @brief   This file contains configuration details for support of the Macronix MX66UW1G45G NOR flash memory,
-  *          using EMM Custom Driver
+  *          using EMM Custom Driver, with a maximum frequency of 50 MHz.
+  *          Compared with stm32_mx66uw1g45g.h, which allows configuration at 200 MHz, this file
+  *          provides an example configuration at a lower speed, with a reduced number
+  *          of duty cycles in DTR-OPI mode.
   ******************************************************************************
   * @attention
   *
@@ -18,8 +21,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32_MX66UW1G45G__H__
-#define __STM32_MX66UW1G45G__H__
+#ifndef __STM32_MX66UW1G45G_50MHZ__H__
+#define __STM32_MX66UW1G45G_50MHZ__H__
 
 #ifdef __cplusplus
 extern "C" {
@@ -62,7 +65,7 @@ extern "C" {
 #define EXTMEM_MX66UW1G45G_CMD1_READ_CFG2           0x71    /*!< Command to read from a register */
 #define EXTMEM_MX66UW1G45G_CMD1_READAW_CFG2         0x71    /*!< Command to read after write operation */
 #define EXTMEM_MX66UW1G45G_CMD1_ADDR_CFG2           0x300   /*!< Address of the register => Dummy cycles */
-#define EXTMEM_MX66UW1G45G_CMD1_VALUE_CFG2          0x00    /*!< Value of the register : 0 (default) => 20 cycles */
+#define EXTMEM_MX66UW1G45G_CMD1_VALUE_CFG2          0x07    /*!< Value of the register : 7 => 6 cycles */
 #define EXTMEM_MX66UW1G45G_CMD1_MASK_CFG2           0x07    /*!< Mask for the register */
 
 #define EXTMEM_MX66UW1G45G_CMD2_WRITE_CFG2          0x72    /*!< Command to write to a register */
@@ -78,7 +81,7 @@ extern "C" {
 #define EXTMEM_MX66UW1G45G_OCTAL_CMD_MASS_ERASE     0x609F  /*!< Command to perform mass erase */
 #define EXTMEM_MX66UW1G45G_OCTAL_CMD_READ           0xEE11  /*!< Command to read data */
 #define EXTMEM_MX66UW1G45G_OCTAL_CMD_WRITE          0x12ED  /*!< Command to write data */
-#define EXTMEM_MX66UW1G45G_OCTAL_DUMMY_READ         20      /*!< Number of dummy cycles for read operations */
+#define EXTMEM_MX66UW1G45G_OCTAL_DUMMY_READ         6       /*!< Number of dummy cycles for read operations */
 #define EXTMEM_MX66UW1G45G_OCTAL_DUMMY_WRITE        0       /*!< Number of dummy cycles for write operations */
 #define EXTMEM_MX66UW1G45G_OCTAL_DUMMY_REG_READ     4       /*!< Dummy cycles to read register */
 #define EXTMEM_MX66UW1G45G_OCTAL_CMD_RDSR           0x05FA  /*!< Command to read status register in octal mode */
@@ -107,7 +110,7 @@ extern "C" {
                                   .ResetDelay                               = 100,                                   /*!< Time needed after Reset (in ms, 0 if no required delay */ \
                                   .SampleShiftCfg                           = EXTMEM_CUSTOM_SSHIFT_CFG_NONE,         /*!< Sample Shift setting */ \
                                   .MemChipSelectHighTimeCycle               = 8,                                     /*!< Common field for memory Chip select high time */ \
-                                  .StartupConfig.Frequency                  = 50000000,                              /*!< Operating frequency in Hz*/ \
+                                  .StartupConfig.Frequency                  = 20000000,                              /*!< Operating frequency in Hz*/ \
                                   .StartupConfig.CommandRead                = EXTMEM_MX66UW1G45G_CMD_READ,           /*!< Command to read data */ \
                                   .StartupConfig.CommandWrite               = EXTMEM_MX66UW1G45G_CMD_WRITE,          /*!< Command to write data */ \
                                   .StartupConfig.DummyCycleRead             = EXTMEM_MX66UW1G45G_DUMMY_READ,         /*!< Number of dummy cycles for read operations */ \
@@ -135,7 +138,7 @@ extern "C" {
                                   .RegisterConfig[3].ConfigStepType                      = EXTMEM_CUSTOM_CFGSTEP_RAW_REG_ADDR,    /*!< Config step to read/write/read a register */ \
                                   .RegisterConfig[3].RWConfigStep.CommandRegisterReadAW  = EXTMEM_MX66UW1G45G_CMD3_READAW_CFG2,  /*!< Command to read from a register after write operation */ \
                                   .RegisterConfig[3].RWConfigStep.RegisterAddress        = EXTMEM_MX66UW1G45G_CMD3_ADDR_CFG2,    /*!< Address of the register */ \
-                                  .OptionalConfig.Frequency                 = 200000000,                             /*!< Operating frequency in Hz*/ \
+                                  .OptionalConfig.Frequency                 = 50000000,                              /*!< Operating frequency in Hz*/ \
                                   .OptionalConfig.CommandRead               = EXTMEM_MX66UW1G45G_OCTAL_CMD_READ,     /*!< Command to read data */ \
                                   .OptionalConfig.CommandWrite              = EXTMEM_MX66UW1G45G_OCTAL_CMD_WRITE,    /*!< Command to write data */ \
                                   .OptionalConfig.DummyCycleRead            = EXTMEM_MX66UW1G45G_OCTAL_DUMMY_READ,   /*!< Number of dummy cycles for read operations */ \
@@ -189,4 +192,4 @@ extern EXTMEM_DRIVER_CUSTOM_ObjectTypeDef extmem_mx66uw1g45g;
 }
 #endif
 
-#endif /* __STM32_MX66UW1G45G__H__ */
+#endif /* __STM32_MX66UW1G45G_50MHZ__H__ */
